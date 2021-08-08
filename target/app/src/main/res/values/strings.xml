@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">타겟</string>
+
+    <string name="nickName">nickname:</string>
+    <string name="nickName2">이름을 작성해주세요.</string>
+
+    <string name="stage">stage</string>
+    <string name="stageNumber">1</string>
+
+    <string name="playerLife">➹➹➹➹➹</string>
+    <string name="playerScore">score</string>
+    <string name="playerScore2">score:</string>
+    <string name="playerScoreNumber">0</string>
+
+    <string name="timeLifeMinute">00:</string>
+    <string name="timeLifeSecond">59</string>
+
+    <string name="rank">rank</string>
+    <string name="name">name</string>
+    <string name="game">game</string>
+    <string name="game_over">over</string>
+    <string name="game_start">start</string>
+    <string name="level">level</string>
+    <string name="up">up</string>
+</resources>
