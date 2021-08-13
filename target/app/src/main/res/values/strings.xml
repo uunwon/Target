@@ -22,4 +22,6 @@
     <string name="game_start">start</string>
     <string name="level">level</string>
     <string name="up">up</string>
+
+    <string name="intro">hello target world</string>
 </resources>
