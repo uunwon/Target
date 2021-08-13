@@ -59,10 +59,10 @@ class MainActivity : AppCompatActivity() {
             when(event.action) {
                 MotionEvent.ACTION_DOWN -> { // 터치했을 때
                     if(!shootStatus) // 화살 날라가고 있을 때는 안움직여
-                        Glide.with(this).load(R.raw.player_01).override(250,250).into(binding.playerImageView)
+                        Glide.with(this).load(R.raw.cat_player_2).override(250,250).into(binding.playerImageView)
                 }
                 MotionEvent.ACTION_UP -> { // 누르고 있다가 땠을 때
-                    Glide.with(this).load(R.raw.player_03).override(250,250).into(binding.playerImageView)
+                    Glide.with(this).load(R.raw.cat_player_01).override(250,250).into(binding.playerImageView)
 
                     if(!shootStatus) // 화살 안날라가고 있을 때만 날려
                         shoot()
@@ -139,7 +139,7 @@ class MainActivity : AppCompatActivity() {
     // 게임 뷰 세팅하기
     fun setGameView(playerNickName: String) {
         binding.mainConstraintLayout.setPadding(0, statusBarHeight(this), navigationBarHeight(this), 0)
-        Glide.with(this).load(R.raw.player_03).override(250,250).into(binding.playerImageView)
+        Glide.with(this).load(R.raw.cat_player_01).override(250,250).into(binding.playerImageView)
 
         binding.stageTextView.visibility = View.VISIBLE
         binding.stageNumberTextView.visibility = View.VISIBLE
@@ -279,11 +279,11 @@ class MainActivity : AppCompatActivity() {
     // 점수 획득 시 하트 아이콘 움직이는 thread
     private fun getScore() {
         binding.scoreImageView.visibility = View.VISIBLE
-        binding.scoreImageView.y = 552f
+        binding.scoreImageView.y = 500f
         Log.d("좌표", "하트 현 y 위치 : ${binding.scoreImageView.y}")
 
         val runnableScoreImageView = Runnable {
-            ObjectAnimator.ofFloat(binding.scoreImageView,"translationY", -60f).apply {
+            ObjectAnimator.ofFloat(binding.scoreImageView,"translationY", -100f).apply {
                 this.duration = 400L
                 start()
             }
