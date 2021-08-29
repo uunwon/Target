@@ -36,8 +36,10 @@ class MainActivity : AppCompatActivity() {
     private var thisPlayerScore = 0 // 현재 stage 스코어
     private var stage = 1
 
-    private var targetPositionY = 0f // 과녁 좌표
-    private var arrowPositionY = 0f // 화살 좌표
+    private var targetPositionX = 0f // 과녁 좌표
+    private var targetPositionY = 0f
+    private var arrowPositionX = 0f // 화살 좌표
+    private var arrowPositionY = 0f
 
     private val backgroundImageArray: Array<Int> = arrayOf(R.drawable.b_1,
                 R.drawable.b_2, R.drawable.b_3)
@@ -155,6 +157,9 @@ class MainActivity : AppCompatActivity() {
         lifeLength = binding.playerLifeTextView.length()
         this.playerNickName = playerNickName // 닉네임 세팅
 
+        targetPositionX = binding.targetImageView.x
+        arrowPositionX = binding.arrowImageView.x
+
         startTimer()
 
         if(imageStatus)
@@ -235,9 +240,10 @@ class MainActivity : AppCompatActivity() {
     private fun moveArrow() {
         binding.arrowImageView.visibility = View.VISIBLE
         binding.arrowImageView.x = 350f
+        Log.d("좌표", "과녁 x 좌표 : ${targetPositionX}, 활살 x 좌표 : ${arrowPositionX}")
 
         runnableArrowImageView = Runnable { // 이미지 내려가기
-            ObjectAnimator.ofFloat(binding.arrowImageView, "translationX", 1150f).apply {
+            ObjectAnimator.ofFloat(binding.arrowImageView, "translationX", targetPositionX).apply {
                 this.duration = 2000L
                 start()
             }
@@ -279,11 +285,11 @@ class MainActivity : AppCompatActivity() {
     // 점수 획득 시 하트 아이콘 움직이는 thread
     private fun getScore() {
         binding.scoreImageView.visibility = View.VISIBLE
-        binding.scoreImageView.y = 500f
+        binding.scoreImageView.y = binding.playerImageView.y + 35f
         Log.d("좌표", "하트 현 y 위치 : ${binding.scoreImageView.y}")
 
         val runnableScoreImageView = Runnable {
-            ObjectAnimator.ofFloat(binding.scoreImageView,"translationY", -100f).apply {
+            ObjectAnimator.ofFloat(binding.scoreImageView,"translationY", -80f).apply {
                 this.duration = 400L
                 start()
             }

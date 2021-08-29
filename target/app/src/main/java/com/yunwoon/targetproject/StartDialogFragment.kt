@@ -2,13 +2,18 @@ package com.yunwoon.targetproject
 
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.DialogFragment
+import com.google.android.material.datepicker.MaterialDatePicker
 import com.yunwoon.targetproject.databinding.FragmentStartdialogBinding
 import com.yunwoon.targetproject.sqlite.DBHelper
 
@@ -20,6 +25,9 @@ class StartDialogFragment : DialogFragment() {
     private val mDelayHandler: Handler by lazy { Handler() } // 과녁 이미지 딜레이 관련
     private var playerNickName = ""
 
+    private var imm : InputMethodManager? = null // 키보드 InputMethodManager
+
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -27,8 +35,18 @@ class StartDialogFragment : DialogFragment() {
         _binding = FragmentStartdialogBinding.inflate(inflater, container, false)
         val view = binding.root
 
+        imm = activity?.getSystemService(android.content.Context.INPUT_METHOD_SERVICE) as InputMethodManager?
+
         // layout background transperency
         dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+        // click name tag
+        binding.nickNameTextView.setOnClickListener {
+            binding.nickNameEditText.requestFocus()
+            imm?.showSoftInput(binding.nickNameEditText, 0)
+        }
+
+        //
 
         // click game start button
         binding.startImageView.setOnClickListener {

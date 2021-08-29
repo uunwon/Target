@@ -67,7 +67,7 @@
         android:fontFamily="@font/mriobros2"
         android:text="@string/game_start"
         android:textColor="@color/white"
-        android:textSize="19sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@id/startImageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
