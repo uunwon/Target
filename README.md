@@ -1,7 +1,7 @@
 # Target <img alt="Kotlin" src="https://img.shields.io/badge/kotlin-1.5-blueviolet.svg"> <img alt="Platform" src="https://img.shields.io/badge/platform-android-brightgreen.svg">
 
 ## 개발 기간
-2021.07.30 ~ 08.06  
+2021.07.30 ~ ing  
 
 ## 앱 소개
 양궁 게임 모바일 애플리케이션
@@ -15,9 +15,9 @@
 ### 스크린샷
 | **Start Dialog** |
 |:--------------:|
-| <img src="/contents/start-dialog.png" width = "100%" /> |
+| <img src="https://user-images.githubusercontent.com/48541984/131257176-72963c9a-1bac-4354-94a3-67fad556fa6a.jpg" width = "600" /> |
 | **Main Activity** |
-| <img src="/contents/main-activity.png" width = "100%" /> |
+| <img src="https://user-images.githubusercontent.com/48541984/131257181-fa0b174e-61ce-4fef-bfab-7685ed33a711.jpg" width = "600" /> |
 
 ### 버전정보
 > Version 1.0.0  
