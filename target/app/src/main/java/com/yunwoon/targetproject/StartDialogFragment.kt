@@ -5,6 +5,9 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
+import android.text.Editable
+import android.text.InputFilter
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -37,7 +40,7 @@ class StartDialogFragment : DialogFragment() {
 
         imm = activity?.getSystemService(android.content.Context.INPUT_METHOD_SERVICE) as InputMethodManager?
 
-        // layout background transperency
+        // layout background transparency
         dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
         // click name tag
@@ -46,7 +49,8 @@ class StartDialogFragment : DialogFragment() {
             imm?.showSoftInput(binding.nickNameEditText, 0)
         }
 
-        //
+        // name english only
+        onlyAlphabetFilterToEnglishET()
 
         // click game start button
         binding.startImageView.setOnClickListener {
@@ -54,12 +58,12 @@ class StartDialogFragment : DialogFragment() {
 
             if(playerNickName.isNotEmpty()) {
                 if(checkSameNickName())
-                    Toast.makeText(context, "중복된 닉네임입니다.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "중복된 닉네임입니다", Toast.LENGTH_SHORT).show()
                 else
                     mDelayHandler.postDelayed(::startGame, 1000L)
             }
             else
-                Toast.makeText(context, "이름을 입력해주세요.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "이름을 입력해주세요", Toast.LENGTH_SHORT).show()
         }
 
         return view
@@ -79,5 +83,24 @@ class StartDialogFragment : DialogFragment() {
             return true
 
         return false
+    }
+
+    private fun onlyAlphabetFilterToEnglishET() {
+        binding.nickNameEditText.setFilters(arrayOf(
+            InputFilter { src, start, end, dst, dstart, dend ->
+                if (src == " ") { // for space
+                    return@InputFilter src
+                }
+                if (src == "") { // for backspace
+                    return@InputFilter src
+                }
+                if (src.matches(Regex("[a-zA-Z]+"))) {
+                    return@InputFilter src
+                }
+                Toast.makeText(requireContext(), "영단어를 입력해주세요", Toast.LENGTH_SHORT).show()
+                binding.nickNameEditText.setText("")
+                return@InputFilter ""
+            }
+        ))
     }
 }

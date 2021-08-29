@@ -43,7 +43,8 @@
             android:singleLine="true"
             android:maxLength="7"
             android:fontFamily="@font/mriobros2"
-            android:backgroundTint="@color/transparency" />
+            android:backgroundTint="@color/transparency"
+            android:inputType="textUri"/>
 
     </LinearLayout>
 
@@ -67,7 +68,7 @@
         android:fontFamily="@font/mriobros2"
         android:text="@string/game_start"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="@id/startImageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

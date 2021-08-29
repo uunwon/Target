@@ -29,7 +29,7 @@
         android:fontFamily="@font/mriobros2"
         android:text="@string/game"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="17sp"
         app:layout_constraintTop_toTopOf="@id/resetImageView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/resetImageView"
@@ -43,7 +43,7 @@
         android:fontFamily="@font/mriobros2"
         android:text="@string/game_over"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="@id/resetImageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/gameTextView"
@@ -58,7 +58,7 @@
         android:fontFamily="@font/mriobros2"
         android:text="@string/playerScore2"
         android:textColor="@color/white"
-        android:textSize="16sp"
+        android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/resetImageView" />
 
@@ -71,7 +71,7 @@
         android:fontFamily="@font/mriobros2"
         android:text="@string/playerScoreNumber"
         android:textColor="@color/white"
-        android:textSize="16sp"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/playerScoreTextView"
         app:layout_constraintTop_toBottomOf="@id/resetImageView" />
