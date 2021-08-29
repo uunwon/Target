@@ -58,12 +58,12 @@ class StartDialogFragment : DialogFragment() {
 
             if(playerNickName.isNotEmpty()) {
                 if(checkSameNickName())
-                    Toast.makeText(context, "중복된 닉네임입니다", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "💡 중복된 닉네임입니다", Toast.LENGTH_SHORT).show()
                 else
                     mDelayHandler.postDelayed(::startGame, 1000L)
             }
             else
-                Toast.makeText(context, "이름을 입력해주세요", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "🧙‍♀️ 이름을 입력해주세요", Toast.LENGTH_SHORT).show()
         }
 
         return view
@@ -85,6 +85,7 @@ class StartDialogFragment : DialogFragment() {
         return false
     }
 
+    // write nickName english only
     private fun onlyAlphabetFilterToEnglishET() {
         binding.nickNameEditText.setFilters(arrayOf(
             InputFilter { src, start, end, dst, dstart, dend ->
@@ -97,7 +98,7 @@ class StartDialogFragment : DialogFragment() {
                 if (src.matches(Regex("[a-zA-Z]+"))) {
                     return@InputFilter src
                 }
-                Toast.makeText(requireContext(), "영단어를 입력해주세요", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "🧙‍♀️ 영어로 입력해주세요", Toast.LENGTH_SHORT).show()
                 binding.nickNameEditText.setText("")
                 return@InputFilter ""
             }

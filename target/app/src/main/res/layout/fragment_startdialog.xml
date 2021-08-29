@@ -44,7 +44,8 @@
             android:maxLength="7"
             android:fontFamily="@font/mriobros2"
             android:backgroundTint="@color/transparency"
-            android:inputType="textUri"/>
+            android:inputType="textUri"
+            android:privateImeOptions="defaultInputmode=english"/>
 
     </LinearLayout>
 
