@@ -1,4 +1,4 @@
-# Target <img alt="Kotlin" src="https://img.shields.io/badge/kotlin-1.5-blueviolet.svg"> <img alt="Platform" src="https://img.shields.io/badge/platform-android-brightgreen.svg">
+# Target <img alt="Android Studio" src="https://img.shields.io/badge/androidstudio-4.0+-important.svg"> <img alt="API" src="https://img.shields.io/badge/API-23+-brightgreen.svg"> <img alt="language" src="https://img.shields.io/badge/language-Kotlin-informational.svg">
 
 ## 개발 기간
 2021.07.30 ~ ing  
